@@ -74,7 +74,7 @@ function showYourCentent(data) {
         $.get("static/data/" + data.random + ".txt").then(function (data) {
             debugger
             $("#result").html(data).show("fade")
-            $("#result font").html(dayjs().format("公元YYYY年MM月DD日"))
+            $("#result font").html(dayjs().format("YYYY年MM月DD日"))
             $(".input-group,#button-group").hide("fade")
         })
 
