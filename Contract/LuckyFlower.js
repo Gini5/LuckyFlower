@@ -1,6 +1,6 @@
 "use strict";
 
-var Divination = function () {
+var LuckyFlower = function () {
     LocalContractStorage.defineProperty(this, "Owner");
     LocalContractStorage.defineProperty(this, "Count", {
         stringify: function (obj) {
@@ -28,7 +28,7 @@ var Divination = function () {
     });
 };
 
-Divination.prototype = {
+LuckyFlower.prototype = {
     init: function () {
         this.Owner = Blockchain.transaction.from;
         this.Count = 0;
@@ -51,10 +51,10 @@ Divination.prototype = {
             throw new Error("only owner invoke")
         }
     },
-    getDivination: function () {
-        var yourDivination = this.Today.get(Blockchain.transaction.from)
-        if (yourDivination) {
-            if (new BigNumber(yourDivination.date).plus(1000 * 60 * 60 * 24).lte(new BigNumber(Date.now()))) {
+    getLuckyFlower: function () {
+        var yourLuckyFlower = this.Today.get(Blockchain.transaction.from)
+        if (yourLuckyFlower) {
+            if (new BigNumber(yourLuckyFlower.date).plus(1000 * 60 * 60 * 24).lte(new BigNumber(Date.now()))) {
                 return this._write()
             } else {
                 return {
@@ -84,14 +84,14 @@ Divination.prototype = {
         }
     },
     getYours() {
-        var yourDivination = this.Today.get(Blockchain.transaction.from);
-        if (yourDivination) {
-            if (new BigNumber(yourDivination.date).plus(1000 * 60 * 60 * 24).lte(new BigNumber(Date.now()))) {
+        var yourLuckyFlower = this.Today.get(Blockchain.transaction.from);
+        if (yourLuckyFlower) {
+            if (new BigNumber(yourLuckyFlower.date).plus(1000 * 60 * 60 * 24).lte(new BigNumber(Date.now()))) {
 
             } else {
                 return {
                     status: 0,
-                    random: yourDivination.random,
+                    random: yourLuckyFlower.random,
                     from: Blockchain.transaction.from
                 }
             }
@@ -106,4 +106,4 @@ Divination.prototype = {
         return this.Count;
     }
 }
-module.exports = Divination;
+module.exports = LuckyFlower;

@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="static/bootstrap4/css/bootstrap.min.css">
   <link rel="stylesheet" href="static/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/animate.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>幸运花</title>
@@ -13,18 +14,22 @@
 <body>
   <canvas id="canvasNebulas" class="background"></canvas>
   <div class="container">
-    <div class="block" style="max-height: 100%;">
-      <h3 class="text-left" style="padding-top:0em">
+    <div class="block" style="max-height: 100%;margin: auto;">
+    <ol class="grey-color text-left">
+        <p class="animated fadeInDown">这个世界上最美好的东西有很多，花朵也是其中一种。</p>
+        <p class="animated fadeInDown">它们每一个品种都各自有各自的花语，代表的意义不一样，守护的东西也不一样。</p>
+        <p class="animated fadeInDown">一朵花被主人赋予的东西也各不一样，当然也可以给各种各样的人带来幸运。</p>
+      </ol>
+      <h4 class="text-center mt-5" style="padding-left:1.5em;">
         查询属于你的幸运花
-      </h3>
+      </h4>
       <div class="white-color" id="result" style="max-width:768px;margin:0 auto;display:none">
-
       </div>
       <p class="text-center mt-4">
         <div class="alert alert-danger" id="nolettershow" role="alert" style="display:none">
           <span>未检测到钱包，请安装NAS钱包后再试！</span>
         </div>
-        <div class="input-group mb-3" style="max-width:768px;margin:0 auto;">
+        <div class="input-group mb-3 mt-5" style="max-width:768px;margin:0 auto;">
           <input type="text" class="form-control" id="txtAddress" disabled="disabled" placeholder="正在获取钱包地址..." aria-label="正在获取钱包地址..." aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-info" disabled="disabled" id="btnGetWrite" type="button">查看</button>
@@ -34,17 +39,12 @@
       <br>      
         <div class="container-fluid">
         <div class="alert alert-warning alert-dismissible fade show mb-0 mt-3" role="alert">
-          提示： 需查询幸运花，请先安装 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">NAS钱包</a>
+          提示：<br>
+          需查询幸运花，请先安装 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">NAS钱包</a><br>
+          如果没有显示结果或长时间加载中，请刷新重试。
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-    </div>
-    <p class="grey-color mt-4">
-        提示：</p>
-      <ol class="grey-color">
-        <p>如果没有显示结果或长时间加载中，请刷新重试。查询结果仅供游戏娱乐。如果没有显示结果或长时间加载中，请刷新重试。查询结果仅供游戏娱乐。</p>
-      </ol>
-
     </div>
   </div>
   <!-- Modal Countdown-->
