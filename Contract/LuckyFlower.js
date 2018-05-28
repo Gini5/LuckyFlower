@@ -32,7 +32,7 @@ LuckyFlower.prototype = {
     init: function () {
         this.Owner = Blockchain.transaction.from;
         this.Count = 0;
-        this.IndexCount = 3;
+        this.IndexCount = 31;
     },
     _isOwner: function () {
         return this.Owner === Blockchain.transaction.from ? true : false;

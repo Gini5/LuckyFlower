@@ -176,26 +176,6 @@ function write(callback) {
         },
         listener: _listener
     });
-    // // debugger;
-    // var _loopFunc = function () {
-    //     console.log(serialNumber)
-    //     nebPay.queryPayInfo(serialNumber).then(function (rep) {
-    //         var data = JSON.parse(rep)
-    //         if (data.code == 0) {
-    //             _call.call(this, data)
-    //         } else {
-    //             _loopCall = setTimeout(_loopFunc, 1000)
-    //         }
-    //     }).catch(function (error) {
-    //         console.error("run write error", error)
-    //         _loopCall = setTimeout(_loopFunc, 1000)
-    //         hideLoading();
-    //         alert("生成失败！")
-    //     })
-    // }
-    // _loopCall = setTimeout(_loopFunc, 1000)
-
-
 }
 
 function checkWallet() {
@@ -229,8 +209,6 @@ window.addEventListener('message', function (e) {
             $("#txtAddress").val(address)
             getAccountState();
 
-            // Unit.fromBasic(Utils.toBigNumber(resp.balance), "nas").toNumber()
-            // app.updateUserInfo()
         }
     }
 })
